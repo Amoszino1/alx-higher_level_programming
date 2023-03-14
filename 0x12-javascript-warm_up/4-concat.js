@@ -1,3 +1,6 @@
 #!/usr/bin/node
-console.log(parseInt(process.argv[2]) ? `My number: ${parseInt(process.argv[2])}` : 'Not a number');
+const argv0 = process.argv[2];
+const argv1 = process.argv[3];
+
+console.log(`${argv0} is ${argv1}`);
 
