@@ -15,12 +15,12 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     st = session.query(State).outerjoin(City).order_by(State.id, City.id).all()
 
-for state in st:
+    for state in st:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
